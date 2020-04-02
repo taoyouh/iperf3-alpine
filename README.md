@@ -38,8 +38,6 @@ docker build -t taoyouh/iperf3-alpine:latest .
 
 You can also use `docker buildx` to build the image for multiple architectures.
 
-### Prerequisites
-
 1. Update to Docker 19.03 or later, and enable experimental features.
 2. Register qemu for running executables from other architectures:
 ```
