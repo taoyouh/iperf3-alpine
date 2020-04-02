@@ -1,5 +1,5 @@
 FROM alpine:latest as build
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories\
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories\
   && apk add --no-cache build-base
 WORKDIR /app/src
 COPY iperf .
@@ -10,3 +10,4 @@ COPY --from=build /app/output /usr/local
 ENTRYPOINT ["iperf3"]
 CMD ["-s"]
 EXPOSE 5201
+EXPOSE 5201/udp
